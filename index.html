@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Mobile Device Rendering (works choppy at best) -->
+    <title>Effective JavaScript: Frogger</title>
+    <link rel="stylesheet" href="css/style.css"></link>
+</head>
+<body>
+    <img src="images/original.png" id="bg"> 
+    <div id= "heading">
+      <span id= "name">Frogger!</span>
+    </div>
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+    <div id= "scorescreen">
+      <span id= "score" class = "legend"> Score: 0</span>
+      <span id= "level" class = "legend"> Level: 0</span>
+      <span id= "lives" class = "legend"> Lives left: 3</span>
+      <br>
+      <br>
+      <audio controls = "controls">
+        <source src = "audio/castleroom.wav">
+      </audio>
+    </div>
+    <!-- start/stop is not functioning properly. The program stops, but on starting again it does not work right. The game starts and then freezes. 
+    <div>
+      <button id="start">start</button>
+      <button id="stop">stop</button>
+    <div>
+    -->
+    <br>
+</body>
+</html>
