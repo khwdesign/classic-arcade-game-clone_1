@@ -7,3 +7,5 @@ Comments are present in the files to further explain the changes made to make th
 In order to run the game, please ensure JavaScript is enabled in your browser and then proceed to :
 
 Double-Click on index.html and use your arrow keys to move left or right and forwards and backwards. If you come in contact with any of the ladybugs you will lose a life.
+
+Once you cross over to the other side and hit the water, you will reset yourself to the next level of difficulty
