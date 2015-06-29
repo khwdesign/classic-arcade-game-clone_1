@@ -24,7 +24,7 @@ var Enemy = function(x, y, speed) {
     this.y = y;
     //this.speed = 150 *(Math.floor(Math.random()*4));
     this.speed = speed;
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -40,12 +40,12 @@ Enemy.prototype.update = function(dt) {
         this.x = -100;
     }
 
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -61,7 +61,7 @@ var Player = function() {
     this.x = 20 + 120 * (Math.floor(Math.random() * 4)); //randomize x position
     this.y = 350;
     this.speed = 10;
-}
+};
 
 // Update the players's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -81,30 +81,30 @@ Player.prototype.update = function(dt) {
         document.getElementById("level").innerHTML = "Level: " + level;
         document.getElementById("score").innerHTML = "Score: " + score;
     }
-}
+};
 
 
 // Draw the player on the screen, required method for game
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Reset the player when it loses life or reaches goals 
 Player.prototype.reset = function() {
     this.x = 100;
     this.y = 400;
-}
+};
 
 Player.prototype.water = function() {
     this.x = 100;
     this.y = 0;
-}
+};
 
 // Prince loses a life
 Player.prototype.lives = function() {
     lives = lives - 1;
     document.getElementById("lives").innerHTML = "Lives left: " + lives;
-}
+};
 
 // Draw the Princess
 
@@ -127,18 +127,18 @@ Princess.prototype.update = function(dt) {
     // all computers.
     this.x * (dt);
     this.y * (dt);
-}
+};
 
 // Reset the princess if she touches the bugs
 Princess.prototype.reset = function() {
     this.x = 20 + 120 * (Math.floor(Math.random() * 4));
     this.y = 100 + 50 * (Math.floor(Math.random() * 4));
-}
+};
 
 // Draw the princess on the screen, required method for game
 Princess.prototype.render = function() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    }
+    };
     // End draw the Princess
 
 // Draw the Gems
@@ -161,13 +161,13 @@ Gems.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x * (dt);
-    this.y * (dt);
-}
+    this.y * (dt);    this.y * (dt);
+};
 
 // Draw the gems on the screen, required method for game
 Gems.prototype.render = function() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    }
+    };
     // End draw Gems
 
 // Now instantiate your objects.
@@ -178,11 +178,11 @@ var player = new Player();
 var princess = new Princess();
 var gems = new Gems();
 
-var Darth = new Enemy(-100, 60, 250);
-var Vader = new Enemy(-100, 180, 400);
+var Spawn = new Enemy(-100, 60, 250);
+var Bugger = new Enemy(-100, 180, 400);
 var Joker = new Enemy(-100, 240, 150);
-var Specter = new Enemy(-100, 120, 300);
-allEnemies = [Darth, Vader, Joker, Specter];
+var Hefe = new Enemy(-100, 120, 300);
+allEnemies = [Spawn, Bugger, Joker, Hefe];
 
 
 // This listens for key presses and sends the keys to your
@@ -210,4 +210,4 @@ Player.prototype.handleInput = function(key) {
     } else if (key === 'down' && this.y < 400) {
         this.y += 83;
     }
-}
+};
