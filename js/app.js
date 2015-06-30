@@ -75,7 +75,7 @@ Player.prototype.update = function(dt) {
 
     // Reset player when it reaches the water
     if (this.y <= 0) {
-        player.reset();
+        this.reset();
         level = level + 1;
         score = score + 10;
         document.getElementById("level").innerHTML = "Level: " + level;
@@ -149,7 +149,7 @@ var Gems = function() {
 
     // The image/sprite for our players, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/Gem Orange.png';
+    this.sprite = 'images/gem-orange.png';
     this.x = 20 + 120 * (Math.floor(Math.random() * 4));
     this.y = 100 + 50 * (Math.floor(Math.random() * 4));
 }
@@ -195,7 +195,7 @@ document.addEventListener('keyup', function(e) {
         40: 'down'
     };
 
-    player.handleInput(allowedKeys[e.keyCode]);
+    this.handleInput(allowedKeys[e.keyCode]);
 });
 
 // The prince moves using the following function
